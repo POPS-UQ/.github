@@ -4,7 +4,7 @@ This page explains the problem POPS solves and what the algorithm actually
 computes. It applies equally to the
 [Python and Julia implementations](installation.md).
 
-## The problem: uncertainty that vanishes when it shouldn't
+## Most UQ schemes provably underestimate uncertainty
 
 Standard Bayesian linear regression (for example scikit-learn's
 `BayesianRidge`) estimates two kinds of uncertainty:
@@ -32,7 +32,6 @@ regions where it can never fit the truth.
 
 ```{admonition} Where this bites hardest
 :class: tip
-
 Surrogate models in computational science — interatomic potentials,
 reduced-order models, learned closures — are misspecified **by construction**:
 the optimal surrogate in the chosen model class is structurally unable to match
@@ -40,7 +39,7 @@ the target function exactly, and the underlying simulations are
 near-deterministic. This is exactly the regime POPS was designed for.
 ```
 
-## The idea: Pointwise Optimal Parameter Sets
+## Pointwise Optimal Parameter Sets
 
 POPS estimates **model misspecification uncertainty** directly. For each
 training point it asks a simple question:
