@@ -7,8 +7,7 @@ sd_hide_title: true
 # POPS-UQ
 
 <p class="tagline">
-Misspecification-aware Bayesian regression for low-noise data —
-honest uncertainties even when your model class cannot fit the truth.
+Misspecification-aware uncertainty quantification (the UQ that Bayes ignores)
 </p>
 
 <p class="badges">
@@ -20,8 +19,8 @@ honest uncertainties even when your model class cannot fit the truth.
 </div>
 
 **POPS** (Pointwise Optimal Parameter Sets) is an algorithm for estimating
-**model misspecification uncertainty** in regression. Standard Bayesian
-regression captures epistemic and aleatoric uncertainty but
+**model misspecification uncertainty** in regression. 
+Standard Bayesian regression captures epistemic and aleatoric uncertainty but
 [provably ignores misspecification](theory.md) — the error that remains because
 a finite model class cannot represent the target function exactly. In the
 low-noise, near-deterministic regime that dominates scientific surrogate
