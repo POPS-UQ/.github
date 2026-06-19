@@ -30,14 +30,14 @@ Bayesian regression handles worst:
 The result is a model that becomes *more* confident as you add data, even in
 regions where it can never fit the truth.
 
-```{admonition} Where this bites hardest
-:class: tip
-Surrogate models in computational science — interatomic potentials,
-reduced-order models, learned closures — are misspecified **by construction**:
-the optimal surrogate in the chosen model class is structurally unable to match
-the target function exactly, and the underlying simulations are
-near-deterministic. This is exactly the regime POPS was designed for.
-```
+!!! tip "Where this bites hardest"
+
+    Surrogate models in computational science — interatomic potentials,
+    reduced-order models, learned closures — are misspecified **by
+    construction**: the optimal surrogate in the chosen model class is
+    structurally unable to match the target function exactly, and the
+    underlying simulations are near-deterministic. This is exactly the regime
+    POPS was designed for.
 
 ## Pointwise Optimal Parameter Sets
 

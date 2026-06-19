@@ -3,22 +3,21 @@
 POPS is implemented in two packages. This page summarizes the public surface of
 each and links to the authoritative, auto-generated reference for full detail.
 
-::::{grid} 1 1 2 2
-:gutter: 3
+<div class="grid cards" markdown>
 
-:::{grid-item-card} 🐍 Python — `popsregression`
-:link: https://tomswinburne.github.io/popsregression
+-   :material-language-python: **Python — `popsregression`**
 
-scikit-learn-style API reference →
-:::
+    ---
 
-:::{grid-item-card} 🟣 Julia — `POPSRegression.jl`
-:link: https://pops-uq.github.io/POPSRegression.jl/
+    [scikit-learn-style API reference :octicons-arrow-right-24:](https://pops-uq.github.io/popsregression/)
 
-Documenter API reference →
-:::
+-   :simple-julia: **Julia — `POPSRegression.jl`**
 
-::::
+    ---
+
+    [Documenter API reference :octicons-arrow-right-24:](https://pops-uq.github.io/POPSRegression.jl/)
+
+</div>
 
 ## Python: `POPSRegression`
 
@@ -26,32 +25,14 @@ A scikit-learn estimator. Construct, `fit(X, y)`, then `predict(X, ...)`.
 
 ### Constructor parameters
 
-```{list-table}
-:header-rows: 1
-:widths: 28 18 54
-
-* - Parameter
-  - Default
-  - Description
-* - `posterior`
-  - `'hypercube'`
-  - Posterior form: `'hypercube'` (PCA-aligned box) or `'ensemble'` (raw corrections)
-* - `resampling_method`
-  - `'uniform'`
-  - Sampler: `'uniform'`, `'sobol'`, `'latin'`, `'halton'`
-* - `resample_density`
-  - `1.0`
-  - Number of posterior samples per training point
-* - `leverage_percentile`
-  - `50.0`
-  - Only use high-leverage training points for the POPS posterior
-* - `mode_threshold`
-  - `1e-8`
-  - Eigenvalue threshold for hypercube dimensionality
-* - `percentile_clipping`
-  - `0.0`
-  - Percentile to clip from hypercube bounds (0–50)
-```
+| Parameter             | Default       | Description                                                              |
+| --------------------- | ------------- | ----------------------------------------------------------------------- |
+| `posterior`           | `'hypercube'` | Posterior form: `'hypercube'` (PCA-aligned box) or `'ensemble'` (raw)   |
+| `resampling_method`   | `'uniform'`   | Sampler: `'uniform'`, `'sobol'`, `'latin'`, `'halton'`                  |
+| `resample_density`    | `1.0`         | Number of posterior samples per training point                          |
+| `leverage_percentile` | `50.0`        | Only use high-leverage training points for the POPS posterior           |
+| `mode_threshold`      | `1e-8`        | Eigenvalue threshold for hypercube dimensionality                       |
+| `percentile_clipping` | `0.0`         | Percentile to clip from hypercube bounds (0–50)                         |
 
 All `BayesianRidge` parameters (`max_iter`, `tol`, `alpha_1`, `alpha_2`,
 `lambda_1`, `lambda_2`, `fit_intercept`, …) are also accepted.
@@ -64,23 +45,13 @@ min/max bounds (`y_max, y_min`), and the epistemic-only std.
 
 ### Fitted attributes
 
-```{list-table}
-:header-rows: 1
-:widths: 32 68
-
-* - Attribute
-  - Description
-* - `coef_`
-  - Regression coefficients (posterior mean)
-* - `sigma_`
-  - Epistemic variance–covariance matrix
-* - `misspecification_sigma_`
-  - Misspecification variance–covariance matrix from POPS
-* - `posterior_samples_`
-  - Samples from the POPS posterior
-* - `alpha_`
-  - Estimated noise precision (not used for prediction)
-```
+| Attribute                  | Description                                            |
+| -------------------------- | ----------------------------------------------------- |
+| `coef_`                    | Regression coefficients (posterior mean)              |
+| `sigma_`                   | Epistemic variance–covariance matrix                  |
+| `misspecification_sigma_`  | Misspecification variance–covariance matrix from POPS |
+| `posterior_samples_`       | Samples from the POPS posterior                       |
+| `alpha_`                   | Estimated noise precision (not used for prediction)   |
 
 ## Julia: `POPSRegression.jl`
 
@@ -116,10 +87,8 @@ sample(model, n_samples; sampling_method=:sobol)   # parameter samples
 Useful for downstream uncertainty propagation — see the
 [molecular dynamics example](../examples/julia-md.md).
 
-```{admonition} Side-by-side mapping
-:class: note
+!!! note "Side-by-side mapping"
 
-The two APIs use slightly different names for the same quantities. The
-[Quick start](../quickstart.md#key-knobs) has a table mapping Python knobs to
-their Julia equivalents.
-```
+    The two APIs use slightly different names for the same quantities. The
+    [Quick start](../quickstart.md#key-knobs) has a table mapping Python knobs
+    to their Julia equivalents.

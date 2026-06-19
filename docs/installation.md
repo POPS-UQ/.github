@@ -58,19 +58,13 @@ The same pattern applies to `examples/ace/`.
 
 ## Which one should I use?
 
-```{list-table}
-:header-rows: 1
-:widths: 25 75
+| If you…                                                                | Reach for                         |
+| ---------------------------------------------------------------------- | --------------------------------- |
+| work in a scikit-learn / NumPy workflow, or want pipelines and search  | **Python** (`popsregression`)     |
+| fit large linear models (e.g. ACE potentials) and want raw speed       | **Julia** (`POPSRegression.jl`)   |
+| are exploring the method interactively or teaching it                  | either — try the [live demo][demo]|
 
-* - If you…
-  - Reach for
-* - work in a scikit-learn / NumPy workflow, or want pipelines and grid search
-  - **Python** (`popsregression`)
-* - fit large linear models (e.g. ACE interatomic potentials) and want raw speed
-  - **Julia** (`POPSRegression.jl`)
-* - are exploring the method interactively or teaching it
-  - either — try the [live demo](https://kermodegroup.github.io/demos/regression-demo.html)
-```
+[demo]: https://kermodegroup.github.io/demos/regression-demo.html
 
 Both implementations are validated against each other: the Julia test suite
 includes cross-checks against the scikit-learn results.

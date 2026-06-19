@@ -1,50 +1,45 @@
 # Examples
 
 Worked problems using POPS. Examples may be written in **Python** or **Julia** —
-the method is the same, and each page is tagged with the language it uses. We
-will add more examples across diverse domains (and potentially more languages)
+the method is the same, and each page is tagged with the language it uses. More
+examples across diverse domains (and potentially more languages) will be added
 over time.
 
-::::{grid} 1 1 2 2
-:gutter: 3
+<div class="grid cards" markdown>
 
-:::{grid-item-card} Simple regression
-:link: python-simple
-:link-type: doc
+-   **Simple regression** · :material-language-python: Python
 
-<span class="lang-pill python">Python</span>
+    ---
 
-Fit a quartic polynomial to an oscillatory target and watch POPS keep honest
-uncertainty where `BayesianRidge` collapses. The canonical "what does
-misspecification look like?" example.
-:::
+    Fit a quartic polynomial to an oscillatory target and watch POPS keep honest
+    uncertainty where `BayesianRidge` collapses. The canonical "what does
+    misspecification look like?" example.
 
-:::{grid-item-card} ACE interatomic potential
-:link: julia-ace
-:link-type: doc
+    [:octicons-arrow-right-24: Read](python-simple.md)
 
-<span class="lang-pill julia">Julia</span>
+-   **ACE interatomic potential** · :simple-julia: Julia
 
-Attach predictive uncertainties to energies, forces and virials of a linear
-Atomic Cluster Expansion potential on a silicon dataset.
-:::
+    ---
 
-:::{grid-item-card} Uncertainty in molecular dynamics
-:link: julia-md
-:link-type: doc
+    Attach predictive uncertainties to energies, forces and virials of a linear
+    Atomic Cluster Expansion potential on a silicon dataset.
 
-<span class="lang-pill julia">Julia</span>
+    [:octicons-arrow-right-24: Read](julia-ace.md)
 
-Propagate POPS parameter uncertainty to a thermodynamic observable — the radial
-distribution function — by Boltzmann-reweighting a single MD trajectory.
-:::
+-   **Uncertainty in molecular dynamics** · :simple-julia: Julia
 
-::::
+    ---
 
-```{admonition} Contributing an example
-:class: note
+    Propagate POPS parameter uncertainty to a thermodynamic observable — the
+    radial distribution function — by Boltzmann-reweighting a single MD
+    trajectory.
 
-Have a POPS use case in another domain or language? Examples are plain
-Markdown pages in `docs/examples/`. Add a page, tag it with a language pill,
-and link it from this grid and the site navigation.
-```
+    [:octicons-arrow-right-24: Read](julia-md.md)
+
+</div>
+
+!!! note "Contributing an example"
+
+    Have a POPS use case in another domain or language? Examples are plain
+    Markdown pages in `docs/examples/`. Add a page, tag it with the language,
+    link it from this grid, and add it to the `nav` in `mkdocs.yml`.

@@ -1,6 +1,6 @@
-# Example: uncertainty in molecular dynamics
-
 <span class="lang-pill julia">Julia</span>
+
+# Uncertainty in molecular dynamics
 
 This example propagates model uncertainties from the [ACE example](julia-ace.md)
 to molecular dynamics trajectories. We run a single MD trajectory with

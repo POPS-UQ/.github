@@ -1,6 +1,6 @@
-# Example: ACE interatomic potential
-
 <span class="lang-pill julia">Julia</span>
+
+# ACE interatomic potential
 
 In this example we fit a linear
 [ACE](https://doi.org/10.1103/PhysRevB.99.014104) (Atomic Cluster Expansion)
