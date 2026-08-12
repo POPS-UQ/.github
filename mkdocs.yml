@@ -71,7 +71,7 @@ plugins:
   - search
 
 nav:
-  - Home: index.md
+  - index.md
   - Installation: installation.md
   - Quick start: quickstart.md
   - Background: theory.md
